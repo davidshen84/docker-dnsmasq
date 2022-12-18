@@ -1,6 +1,9 @@
-from alpine:3
+FROM alpine:3
+label maintainer = "David Shen" \
+    org.opencontainers.image.source = "https://github.com/davidshen84/docker-dnsmasq"
+    org.opencontainers.artifact.description = "a simple dnsmasq service"
 
-run apk add --no-cache \
+RUN apk add --no-cache \
     dnsmasq
 
-cmd ["dnsmasq", "-d"]
+CMD ["dnsmasq", "-d"]
