@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  dnsmasq:
+    image: dnsmasq:latest
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf
+    cap_add:
+      - net_admin
+    ports:
+      - 5355:53/udp
