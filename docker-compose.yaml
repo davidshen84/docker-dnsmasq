@@ -2,14 +2,14 @@ version: "3.8"
 
 services:
   dnsmasq:
-    image: dnsmasq:latest
+    image: ghcr.io/davidshen84/docker-dnsmasq/docker-dnsmasq:latest
     volumes:
       - ./dnsmasq.conf:/etc/dnsmasq.conf
     cap_add:
       - net_admin
     ports:
-      - 5355:53/udp
+      - 5353:53/udp
     command:
       - dnsmasq
+      - --no-daemon
       # - --keep-in-foreground
-      - --no-deamon
